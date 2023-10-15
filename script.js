@@ -1,10 +1,12 @@
 function main()
 {
     const ctor = (a, b) =>
-    {return {
+    ({
         first: a,
         second: b,
         total: () => a + b,
-    }};
-    console.log(ctor(10, 20).total())
+    });
+    const label = document.createElement("label");
+    label.innerHTML = ctor(10, 20).total();
+    document.getElementsByTagName("body")[0].appendChild(label);
 }
